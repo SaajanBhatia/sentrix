@@ -24,7 +24,7 @@ scheduler.init_app(app)
 scheduler.start()
 
 scheduler.add_job(id='RSS Scheduled Task', func=FACTORY.dataCollectionFactory,
-                  trigger='interval', minutes=30)
+                  trigger='interval', minutes=10)
 
 
 @app.route('/')
