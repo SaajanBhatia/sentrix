@@ -29,6 +29,3 @@ def isMarketOpenUS(symbol: str) -> bool:
             if (eastern_now - last_trade_time).total_seconds() < 120:
                 return True
     return False
-
-
-print(isMarketOpenUS(symbol='AAPL'))
