@@ -35,7 +35,7 @@ class RssService:
 
         return dt
 
-    def write_to_db(self, rssData: RssFeedData):
+    def _writeToDB(self, rssData: RssFeedData):
         """Write to DB if the RSS ID doesn't exist"""
         try:
             unique = self.db.isUniqueRSSID(id=rssData.rss_id)
@@ -43,10 +43,14 @@ class RssService:
                 # Write to db
                 self.db.writeRSS(rssData)
                 self.logger.info('Entry written to database')
+                return True
         except Exception as e:
             self.logger.error(f"Error writing to DB: {e}")
 
+        return False
+
     def service(self):
+        writtenCount = 0
         for rss in self.rssList:
             try:
                 feed = feedparser.parse(rss.getUrl())
@@ -63,10 +67,14 @@ class RssService:
                         source=entry.link
                     )
 
-                    self.write_to_db(rssFeedData)
+                    recorded = self._writeToDB(rssFeedData)
+                    if recorded:
+                        writtenCount += 1
 
             except Exception as e:
                 self.logger.error(f"Error processing RSS feed: {e}")
 
         current_date = datetime.utcnow().isoformat()
         self.logger.info(f'RSS Service Complete at {current_date}')
+
+        return writtenCount
