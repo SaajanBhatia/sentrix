@@ -1,0 +1,31 @@
+name,ticker,type
+"Apple Inc.",AAPL,Stock
+"Microsoft Corporation",MSFT,Stock
+"Amazon.com, Inc.",AMZN,Stock
+"Tesla, Inc.",TSLA,Stock
+"Berkshire Hathaway Inc.",BRK-B,Stock
+"JPMorgan Chase & Co.",JPM,Stock
+"Johnson & Johnson",JNJ,Stock
+"Visa Inc.",V,Stock
+"Walmart Inc.",WMT,Stock
+"Procter & Gamble Co.",PG,Stock
+"S&P 500",^GSPC,Index
+"Dow Jones Industrial Average",^DJI,Index
+"NASDAQ Composite",^IXIC,Index
+"Russell 2000",^RUT,Index
+"NYSE Composite",^NYA,Index
+"Alphabet Inc.",GOOGL,Stock
+"Meta Platforms, Inc.",META,Stock
+"NVIDIA Corporation",NVDA,Stock
+"Home Depot, Inc.",HD,Stock
+"Pfizer Inc.",PFE,Stock
+"Chevron Corporation",CVX,Stock
+"Coca-Cola Co.",KO,Stock
+"PepsiCo, Inc.",PEP,Stock
+"Cisco Systems, Inc.",CSCO,Stock
+"Intel Corporation",INTC,Stock
+"Netflix, Inc.",NFLX,Stock
+"Boeing Co.",BA,Stock
+"Goldman Sachs Group Inc.",GS,Stock
+"3M Company",MMM,Stock
+"McDonald's Corp.",MCD,Stock
